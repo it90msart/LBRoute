@@ -1,4 +1,4 @@
-# LBRoute]
+# LBRoute
 1.使用说明:
 LBRoute路由是一款android路由跳转管理系统。支持两种方式
 第一种:注解防方式
