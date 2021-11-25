@@ -130,7 +130,9 @@ arg3:参数跳转的参数方法名称
 
 #接入
 1.集成：依赖库implementation 'com.github.it90msart:LBRoute:1.0.0'
+
 如果你的项目需要混淆:
+
 混淆-keep class com.wiik.lubanroute.action.**{*;}
 
 
