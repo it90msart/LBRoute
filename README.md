@@ -1,10 +1,11 @@
 # LBRoute说明文档
-1.使用说明:
-LBRoute路由是一款android路由跳转管理系统。支持两种方式
-第一种:注解防方式
-第二种:用户自定义
-背景：LB是鲁班的检查luban,后期我会提供一系列lb库，解决开过过程存在的各种问题，一站式解决大家所有的问题，可以提供个性化基础库，能够让大多数人通过鲁班系列的依赖库，快速搭建自己的项目，提高开发速度,降低开发成本。
-     
+
+1.使用说明:  
+LBRoute路由是一款android路由跳转管理系统。支持两种方式  
+第一种:注解防方式  
+第二种:用户自定义  
+
+背景：LB是鲁班的检查luban,后期我会提供一系列lb库，解决开过过程存在的各种问题，一站式解决大家所有的问题，可以提供个性化基础库，能够让大多数人通过鲁班系列的依赖库，快速搭建自己的项目，提高开发速度,降低开发成本。     
 # 使用说明:
 
 # 1.初始化，注解部分
@@ -43,7 +44,7 @@ public class MyDefineModule extends LBBaseRouteModule {
 
 #  在application注册好自己的模块
 
-中新增LBDefineRouteModule.getInstance().regist("mymodi",new MyDefineModule());
+中新增LBDefineRouteModule.getInstance().regist("mymodi",new MyDefineModule());  
 由于LBDefineRouteModule在LBRouterDataManager已初始化，不需要再次初始化了
 
 
@@ -52,14 +53,14 @@ public class MyDefineModule extends LBBaseRouteModule {
 
 3.1LBRouteView是对Activity类的注解
 
-@LBRouteView(routeCode = "123",className = "com.wiik.lubanroute.action.TestActivity")
-public class TestActivity extends AppCompatActivity{
+@LBRouteView(routeCode = "123",className = "com.wiik.lubanroute.action.TestActivity")  
+public class TestActivity extends AppCompatActivity{  
 }
 
-routeCode:路由编号
+routeCode:路由编号  
 className:类的报名+类名
 
-3.2LBRouteMethod方法注解：用于跳转过程中，参数获取携带参数的方法
+3.2LBRouteMethod方法注解：用于跳转过程中，参数获取携带参数的方法  
 
     @LBRouteMethod(cls = TestActivity.class,routeMethodName = "getRouteData")
     public Bundle getRouteData() {
@@ -69,9 +70,9 @@ className:类的报名+类名
     }
     
    
-cls：指向当前Activity
-routeMethodName:该方法名
-配合路由使用，可以支持多方法
+cls：指向当前Activity  
+routeMethodName:该方法名  
+配合路由使用，可以支持多方法  
 
 
 
