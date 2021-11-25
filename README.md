@@ -1,4 +1,4 @@
-# LBRoute
+# LBRoute说明文档
 1.使用说明:
 LBRoute路由是一款android路由跳转管理系统。支持两种方式
 第一种:注解防方式
@@ -106,7 +106,7 @@ arg3:参数跳转的参数方法名称
      
      
 注意：如果你需要使用h5混合使用，就必须设置webViewActivity，否则会报异常,使用可以参考DEMO提供
-
+#接入
 1.集成：依赖库implementation 'com.github.it90msart:LBRoute:1.0.0'
 
 如果你的项目需要混淆:
