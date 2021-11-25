@@ -107,7 +107,8 @@ arg3:参数跳转的参数方法名称
      
 注意：如果你需要使用h5混合使用，就必须设置webViewActivity，否则会报异常,使用可以参考DEMO提供
 
-1.集成：依赖库
+1.集成：依赖库implementation 'com.github.it90msart:LBRoute:1.0.0'
+
 
 
 
