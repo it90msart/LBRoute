@@ -26,21 +26,18 @@ setWebViewActivity(Activity):是支持h5跳转，如果你的h5连接需要访�
 # 2.如果想自定义和注解路由都在用，那需要定义自己的路由模块。
 定义一个自己的路由模块，
 
-public class MyDefineModule extends LBBaseRouteModule {
+public class MyDefineModule extends LBBaseRouteModule {  
     @Override
-    public void route(String code, Intent intent) {
-
-        switch (Integer.parseInt(code)) {
-            case 123:
-                intent.setClass(mContext, TestActivity.class);
-                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                mContext.startActivity(intent);
-                break;
-        }
-
-
-    }
-}
+    public void route(String code, Intent intent) {  
+        switch (Integer.parseInt(code)) {  
+            case 123:  
+                intent.setClass(mContext, TestActivity.class);  
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);  
+                mContext.startActivity(intent);  
+                break;  
+        }  
+    }  
+}  
 
 #  在application注册好自己的模块
 
@@ -58,7 +55,7 @@ public class TestActivity extends AppCompatActivity{
 }
 
 routeCode:路由编号  
-className:类的报名+类名
+className:class.getname（）【 当前的类名：com.wiik.lubanroute.action.TestActivity】
 
 3.2LBRouteMethod方法注解：用于跳转过程中，参数获取携带参数的方法  
 
@@ -85,10 +82,8 @@ routeMethodName:该方法名
 LBRouteModule.routeCodeActivity(TestActivity.this.getClass(),"123","getRouteData");
 
 arg1:当前类的class，
-
-arg2:页面路由编号
-
-arg3:参数跳转的参数方法名称
+arg2:页面路由编号  
+arg3:参数跳转的参数方法名称  
 
 
 # 2.原生页面通过手动绑定参数
@@ -97,21 +92,20 @@ arg3:参数跳转的参数方法名称
      bundle.putString("key","bundle手动传值");
      LBRouteModule.routeCodeActivity("123",bundle);
      
-     arg1:页面路由编码
-     
-     arg2:参数的参数
+     arg1:页面路由编码  
+     arg2:参数的参数  
      
      
 # 3.H5跳转路由
-       String url="www.aaa.com?routeCode=123&key=routeCodevalue";
-       LBRouteModule.routeUrlActivity(url);
+       String url="www.aaa.com?routeCode=123&key=routeCodevalue";  
+       LBRouteModule.routeUrlActivity(url);  
 
 
 
 # 4.H5跳转到自定义路由
 
- String url="www.aaa.com?routeCode=123&key=routeCodevaluedefine";
-                LBRouteModule.routeDefineUrlActivity(url);
+ String url="www.aaa.com?routeCode=123&key=routeCodevaluedefine";  
+                LBRouteModule.routeDefineUrlActivity(url);  
                 
                 
 # 5.原生跳转到自定义
@@ -119,14 +113,14 @@ arg3:参数跳转的参数方法名称
            bundle.putString("key","bundle 自定义手动传值");
            LBRouteModule.routeDefineActivity("123",bundle);
            
-           这边逻辑在自定义MyDefineModule方法中处理
-                   switch (Integer.parseInt(code)) {
-            case 123:
-                intent.setClass(mContext, TestActivity.class);
-                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                mContext.startActivity(intent);
-                break;
-        }
+           这边逻辑在自定义MyDefineModule方法中处理  
+                   switch (Integer.parseInt(code)) {  
+            case 123:  
+                intent.setClass(mContext, TestActivity.class);  
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);  
+                mContext.startActivity(intent);  
+                break;  
+        }  
      
      
      
